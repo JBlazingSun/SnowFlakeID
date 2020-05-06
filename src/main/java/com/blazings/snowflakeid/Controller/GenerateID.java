@@ -8,9 +8,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("get")
 public class GenerateID {
+    private SnowFlakeID snowFlakeID;
+    public GenerateID() {
+        snowFlakeID = new SnowFlakeID(6, 8);
+    }
+
     @GetMapping("id")
     public String GetID(){
-        SnowFlakeID snowFlakeID = new SnowFlakeID(6, 8);
         return String.valueOf(snowFlakeID.nextId());
     }
 }
