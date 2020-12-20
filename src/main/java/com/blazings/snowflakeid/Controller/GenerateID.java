@@ -15,6 +15,6 @@ public class GenerateID {
 
     @GetMapping("id")
     public String GetID(){
-        return String.valueOf(snowFlakeID.nextId());
+        return String.valueOf(snowFlakeID.nextId()  + "test");
     }
 }
